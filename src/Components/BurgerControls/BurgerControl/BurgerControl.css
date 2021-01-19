@@ -1,0 +1,63 @@
+.controlBox{
+    background-color: peru;
+    margin: 16px auto;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+.price{
+    text-align: center;
+}
+.label {
+    width: 75px;
+}
+.control {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.addIngredient, .removeIngredient {
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+.addIngredient:focus, .removeIngredient:focus {
+    outline: none;
+}
+.addIngredient {
+    background-color: rgb(216 193 60);
+    color: inherit;
+}
+.removeIngredient {
+    background-color: white;
+    color: rgb(216 193 60);
+}
+.removeIngredient:disabled {
+    background-color:gray;
+    cursor: auto
+}
+.orderBtn {
+    padding: 10px;
+    color: #d8c13c;
+    background-color: #463c00;
+    cursor: pointer;
+    font-weight: bold;
+}
+.orderBtn:disabled {
+    color: #201c01;
+    background-color: #7f7f79;
+    cursor: auto;
+    font-weight: bold;
+}
+.orderBtnAnimation {
+    animation-name: enableButton;
+    animation-duration: 0.5s;
+}
+@keyframes enableButton {
+    0% {transform: scale(1)}
+    60% { transform: scale(1.1)}
+    100% {transform: scale(1)}
+}

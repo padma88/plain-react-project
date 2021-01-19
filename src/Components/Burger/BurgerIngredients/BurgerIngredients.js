@@ -1,28 +1,35 @@
 // eslint-disable-next-line
 import React, { Component } from 'react';
-// import PropType from 'prop-types';
+import PropTypes from 'prop-types';
+import './BurgerIngredients.css';
 
 class BurgerIngredients extends Component {
     render() {
         let ingredient = null;
         switch (this.props.type){
             case ('bread-bottom'):
-                ingredient = <div>Bread Bottom</div>;
+                ingredient = <div className='ingredient breadBottom'></div>;
                 break;
             case ('bread-top'):
-                ingredient = <div>Bread Top
-                    <div>Seed1</div>
-                    <div>Seed2</div>
+                ingredient = <div className='ingredient breadTop'>
+                    <div className='seed_1'></div>
+                    <div className='seed_2'></div>
                 </div>;
                 break;
             case ('meat'):
-                ingredient = <div>Meat</div>;
+                ingredient = <div className='ingredient meat'></div>;
+                break;
+            case ('bacon'):
+                ingredient = <div className='ingredient bacon'></div>;
+                break;
+            case ('salad'):
+                ingredient = <div className='ingredient salad'></div>;
                 break;
             case ('cheese'):
-                ingredient = <div>Cheese</div>;
+                ingredient = <div className='ingredient cheese'></div>;
                 break;
             case ('leaf'):
-                ingredient = <div>Leaf</div>;
+                ingredient = <div className='ingredient leaf'></div>;
                 break;
             default:
                 ingredient = null;
@@ -31,7 +38,7 @@ class BurgerIngredients extends Component {
         return ingredient;
     }
 }
-// BurgerIngredients = {
-//     type: PropType.string.isRequired
-// }
+BurgerIngredients.propTypes = {
+    type: PropTypes.string.isRequired
+}
 export default BurgerIngredients;
