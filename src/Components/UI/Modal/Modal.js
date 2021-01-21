@@ -1,5 +1,6 @@
 import React from 'react';
 import Auxilary from '../../../hoc/Auxilary';
+import BackDrop from '../BackDrop/BackDrop';
 import './Modal.css'
 const modal = (props) => {
     const style = {
@@ -7,11 +8,10 @@ const modal = (props) => {
         opacity: props.show ? '1' : '0'
     };
     return <Auxilary>
+                <BackDrop show={props.show} clicked={props.modalClosed}></BackDrop>
                 <div className='modal'
                     style={style}>
                     {props.children}
-                    <button className='continueBtn' onClick={props.continue}>Continue</button>
-                    <button className='cancelBtn' onClick={props.cancel}>Cancel</button>
                 </div>
             </Auxilary>
 };

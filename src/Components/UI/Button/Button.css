@@ -1,0 +1,19 @@
+.Button {
+    font: inherit;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    border: none
+}
+
+.Success {
+    background-color: #cd853f;
+    color: white;
+}
+
+.Cancel {
+    background-color: white;
+    color: #cd853f
+}

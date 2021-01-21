@@ -1,6 +1,6 @@
 .controlBox{
     background-color: peru;
-    margin: 16px auto;
+    margin: auto;
     color: white;
     width: 100%;
     bottom: 0;
@@ -15,7 +15,7 @@
 .control {
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 6px;
 }
 .addIngredient, .removeIngredient {
     border: none;
@@ -40,7 +40,7 @@
     cursor: auto
 }
 .orderBtn {
-    padding: 10px;
+    padding: 8px;
     color: #d8c13c;
     background-color: #463c00;
     cursor: pointer;

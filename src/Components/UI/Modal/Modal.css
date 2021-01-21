@@ -12,15 +12,20 @@
     box-sizing: border-box;
     transition: all 0.3s ease-out;
 }
-.continueBtn, .cancelBtn {
-    bottom: 0;
-    float: right;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-    border-radius: 2px;
-    font-weight: bold;
-    color: #d8c13c;
-    background-color: #463c00;
-    padding: 10px;
+
+@media (max-width: 500px) {
+    .modal{
+        position: fixed;
+        z-index: 500;
+        width: 80%;
+        height: 50%;
+        background-color: white;
+        border: 1px solid white;
+        box-shadow: 1px 1px 1px 1px black;
+        padding: 16px;
+        left: 10%;
+        top: 25%;
+        box-sizing: border-box;
+        transition: all 0.3s ease-out;
+    }
 }

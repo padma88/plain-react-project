@@ -1,16 +1,19 @@
 .burgerContainer{
     width: 50%;
-    height: 350px;
+    height: 300px;
     overflow-y: auto;
-    margin: 16px auto;
+    position: relative;
+    margin: 70px auto;
     text-align: -webkit-center;
+    text-align: -moz-center;
 }
 .emptyMessage{
     color: lightgoldenrodyellow;
-
+    width: inherit
 }
-@media only screen and (max-height: 500px) {
-    .burgerContainer {
-        height: 400px
+
+@media (max-width: 600px) {
+    .burgerContainer{
+        width: 100%;
     }
 }

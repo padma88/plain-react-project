@@ -24,7 +24,7 @@ class BurgerBuilder extends Component {
             leaf: 0
         },
         totalPrice: MIN_PRICE,
-        isPurchase: false
+        purchasing: false
     }
     addIngredientHandler = (type) => {
         const updatedIngredients = {...this.state.ingredients};
@@ -49,26 +49,22 @@ class BurgerBuilder extends Component {
     }
     purchaseHandler = () => {
         this.setState({
-            isPurchase: true
-        })
-    }
-    continuePurchaseHandler = () => {
-        this.setState({
-            isPurchase: false
+            purchasing: true
         })
     }
     cancelPurchaseHandler = () => {
         this.setState({
-            isPurchase: false
+            purchasing: false
         })
     }
     render () {
         return (
             <Auxilary>
-                <Modal show={this.state.isPurchase} 
-                       continue={() => this.continuePurchaseHandler()}
-                       cancel={() => this.cancelPurchaseHandler()}>
-                    <OrderSummary ingredients={this.state.ingredients}/>
+                <Modal show={this.state.purchasing} 
+                       modalClosed={this.cancelPurchaseHandler}>
+                    <OrderSummary ingredients={this.state.ingredients}
+                       continue={() => this.purchaseHandler()}
+                       cancel={() => this.cancelPurchaseHandler()}/>
                 </Modal>
                 <Burger ingredients={this.state.ingredients} price={this.state.totalPrice}></Burger>
                 <BurgerControls 

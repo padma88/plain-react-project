@@ -1,4 +1,6 @@
 import React from 'react';
+import Auxilary from '../../hoc/Auxilary';
+import Button from '../UI/Button/Button';
 import './OrderSummary.css';
 
 const orderSummary = (props) => {
@@ -8,14 +10,18 @@ const orderSummary = (props) => {
         return count !== 0 ? <li key={ingKey} className='li'>{ingKey} - {count}</li> : null
     })
     return (
-        <div>
+        <Auxilary>
             <strong>Your Order</strong>
             <div> A delicius burger with the following ingredients...</div>
             <ul>
                 {list}
             </ul>
             <div>Continue to checkout?</div>
-        </div>
+            <div className='buttonPosition'>
+                <Button clicked={props.continue} btnType='Success'>CONTINUE</Button>
+                <Button clicked={props.cancel} btnType='Cancel'>CANCEL</Button>
+            </div>
+        </Auxilary>
     );
 }
 
