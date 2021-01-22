@@ -1,3 +1,7 @@
+
+.summaryContainer div{
+    padding: 10px;
+}
 ul {
     list-style-type: none;
 }
@@ -7,7 +11,11 @@ ul {
 .buttonPosition {
     float: right;
     bottom: 0;
-    position: fixed;
     right: 0;
     margin: 0px 20px 20px;
+}
+
+.summaryContainer::after{
+    content: '';
+    clear: right
 }

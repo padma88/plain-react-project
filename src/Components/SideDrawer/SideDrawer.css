@@ -1,6 +1,6 @@
 .SideDrawer{
     width: 250px;
-    height: 100vh;
+    height: 100%;
     float: left;
     position: fixed;
     top: 0;

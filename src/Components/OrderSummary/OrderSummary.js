@@ -11,12 +11,15 @@ const orderSummary = (props) => {
     })
     return (
         <Auxilary>
-            <strong>Your Order</strong>
-            <div> A delicius burger with the following ingredients...</div>
-            <ul>
-                {list}
-            </ul>
-            <div>Continue to checkout?</div>
+            <div className='summaryContainer'>
+                <div><strong>Your Order</strong></div>
+                <div> A delicius burger with the following ingredients...</div>
+                <ul>
+                    {list}
+                </ul>
+                <div>Continue to checkout?</div>
+                <div><strong>Total Price: {props.price}</strong></div>
+            </div>
             <div className='buttonPosition'>
                 <Button clicked={props.continue} btnType='Success'>CONTINUE</Button>
                 <Button clicked={props.cancel} btnType='Cancel'>CANCEL</Button>

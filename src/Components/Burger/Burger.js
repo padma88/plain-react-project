@@ -16,10 +16,12 @@ const burger = (props) => {
                      </p>;
     }
     return (
-        <div className='burgerContainer'>
-            <BurgerIngredients key='bread-top' type='bread-top'></BurgerIngredients>
-            {ingredients}
-            <BurgerIngredients key='bread-bottom' type='bread-bottom'></BurgerIngredients>
+        <div className='burger'>
+            <div className='burgerContainer'>
+                <BurgerIngredients key='bread-top' type='bread-top'></BurgerIngredients>
+                {ingredients}
+                <BurgerIngredients key='bread-bottom' type='bread-bottom'></BurgerIngredients>
+            </div>
         </div>);
 }
 
