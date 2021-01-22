@@ -1,5 +1,5 @@
 import React from 'react';
-import Auxilary from '../../../hoc/Auxilary';
+import Auxilary from '../../../hoc/Auxilary/Auxilary';
 import BackDrop from '../BackDrop/BackDrop';
 import './Modal.css'
 const modal = (props) => {
