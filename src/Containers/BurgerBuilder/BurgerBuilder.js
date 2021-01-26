@@ -58,34 +58,13 @@ class BurgerBuilder extends Component {
         });
     }
     orderHandler = () => {
-        const orderInfo = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: 'Padma',
-                address: {
-                    street: 'XYZ',
-                    zipcode: '23414',
-                    city: 'XZY'
-                },
-                mailID: 'test@test.com',
-            },
-            deliveryMode: 'fastest'
-        };
-        this.setState({ loading: true });
-        axios.post('/orders.on', orderInfo)
-            .then((response) => {
-                this.setState({
-                    purchasing: false,
-                    loading: false
-                })
-            })
-            .catch(error => {
-                this.setState({
-                    purchasing: false,
-                    loading: false
-                })
-            })
+        const queryParams = [];
+        for (let i in this.state.ingredients) {
+            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
+        }
+        queryParams.push('price=' + this.state.totalPrice);
+        const queryString = queryParams.join('&');
+        this.props.history.push('/checkout?' + queryString);
     }
     purchaseHandler = () => {
         this.setState({
@@ -117,12 +96,10 @@ class BurgerBuilder extends Component {
                     <Auxilary>
                         <Modal show={this.state.purchasing} 
                             modalClosed={this.cancelPurchaseHandler}>
-                            {this.state.loading ? spinner :
-                                <OrderSummary ingredients={this.state.ingredients}
+                            <OrderSummary ingredients={this.state.ingredients}
                                 continue={this.orderHandler}
                                 cancel={this.cancelPurchaseHandler}
                                 price={this.state.totalPrice}/> 
-                            }
                         </Modal>
                         {burgerBurgerControls}
                     </Auxilary>

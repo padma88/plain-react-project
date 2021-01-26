@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
+import { BrowserRouter } from 'react-router-dom';
 
 axios.defaults.baseURL = 'https://burger-builder-2ad7d-default-rtdb.firebaseio.com/';
 axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
@@ -29,7 +30,9 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

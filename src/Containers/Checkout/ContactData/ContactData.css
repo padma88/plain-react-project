@@ -1,0 +1,27 @@
+.ContactDataContainer {
+    box-shadow: 1px 1px 1px 1px #888888;
+    width: 500px;
+    text-align: center;
+    margin: auto
+}
+.ContactDataContainer::after{
+    content: '';
+    clear: right
+}
+.ContactForm {
+    /* margin-bottom: 60px; */
+}
+input {
+    width: 50%;
+    border: 1px solid lightgray;
+    display: inline-grid;
+    margin: 5px;
+    font-size: 14px;
+}
+input:hover {
+    border: 1px solid #f1ae6b;
+}
+input::after{
+    content: '';
+    clear: right
+}
