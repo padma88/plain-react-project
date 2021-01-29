@@ -1,0 +1,32 @@
+.OrderSection {
+    width: 80%;
+    border: 1px solid transparent;
+    padding: 16px;
+    box-shadow: 0px 2px 3px 1px lightgrey;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+.Ingredients span{
+    text-transform: capitalize;
+    border: 0.1px solid gray;
+    padding: 2px;
+    margin-left: 4px;
+}
+.Ingredients {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 500px) {
+    
+    .Ingredients {
+        margin-bottom: 15px;
+        display: inline-grid;
+    }
+    .Ingredients span{
+        text-transform: capitalize;
+        border: 0.1px solid gray;
+        padding: 2px;
+        margin: 4px 4px 4px 25px;
+    }
+}

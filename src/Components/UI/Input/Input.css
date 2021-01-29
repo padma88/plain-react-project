@@ -1,0 +1,39 @@
+.InputElement{
+    display: grid;
+    margin: 10px
+}
+.InputElement select {
+    width: 82.5% !important;
+}
+.InputElement input, .InputElement select {
+    width: 80%;
+    border: 1px solid lightgray;
+    display: inline-grid;
+    margin: auto;
+    font-size: 14px;
+    padding: 6px
+}
+.InputElement input:hover, .InputElement select:hover {
+    border: 1px solid #f1ae6b;
+}
+.InputElement input:focus, .InputElement select:focus {
+    outline: none;
+    background-color: lightgrey;
+}
+.InputElement .Label{
+    text-align: left;
+    margin: 0px 0px 4px 45px;
+}
+.InputElement .errorMessage {
+    color: red;
+    font-size: 14px;
+    margin: 4px 0px 0px 45px;
+    text-align: left;
+}
+.InputElement .errorHighLight {
+    border: 1px solid red;
+}
+/* input::after, select::after{
+    content: '';
+    clear: right
+} */
