@@ -4,7 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import burgerBuilderReducer from './store/reducers/burgerBuilder';
+import orderReducer from './store/reducers/order';
+import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const rootReducer = combineReducers({
+  burgerBuilder: burgerBuilderReducer, 
+  order: orderReducer
+})
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 axios.defaults.baseURL = 'https://burger-builder-2ad7d-default-rtdb.firebaseio.com/';
 axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
@@ -29,11 +42,13 @@ axios.interceptors.response.use(response => {
 });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 

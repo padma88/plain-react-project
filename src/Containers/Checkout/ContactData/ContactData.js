@@ -30,8 +30,7 @@ class ContactData extends Component {
                 value: '',
                 validation: {
                     required: true,
-                    minLength: 1,
-                    maxLength: 30
+                    type: 'email'
                 }
             },
             postalCode: {
@@ -43,9 +42,7 @@ class ContactData extends Component {
                 value: '',
                 validation: {
                     required: true,
-                    isNumber: true,
-                    minLength: 5,
-                    maxLength: 5
+                    type: 'zipcode'
                 }
             },
             street: {
@@ -117,6 +114,16 @@ class ContactData extends Component {
             if (isValid && value && validation.maxLength) {
                 isValid = value.length <= validation.maxLength;
                 errorMessage = 'Maximum length is ' + validation.maxLength;
+            }
+            if (value && validation.type === 'email') {
+                const regEx = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+                isValid = regEx.test(value);
+                errorMessage = !isValid ? 'Enter valid email address' : '';
+            }
+            if (value && validation.type === 'zipcode') {
+                const regEx = new RegExp('^[0-9]{5}$');
+                isValid = regEx.test(value);
+                errorMessage = !isValid ? 'Enter valid postal Code' : '';
             }
         }
         return {valid: isValid, errorMessage: errorMessage};

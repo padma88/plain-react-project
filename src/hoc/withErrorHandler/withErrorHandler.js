@@ -21,6 +21,9 @@ const withErrorHandler = (WrappedComponent, axios) => {
                 });
             });
         }
+        componentWillUnmount () {
+            //SS
+        }
         errorConfirmedHandler = () => {
             this.setState({
                 error: null
